@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+header .container-n {
+  padding: 0 10px;
+}
+header .container-n .top-menu .logo {
+  width: 120px;
+}
+header .container-n .top-menu .logo img {
+  width: 100%;
+}
+header .container-n .top-menu .icons img:last-child {
+  width: 22px;
+}
+header .container-n .top-menu a {
+  color: #231f20;
+  font-size: 12px;
+  border-left: 1px solid #ededed;
+  padding: 8px 0 0 10px;
+  margin-top: 5px;
+}
+header .container-n .top-menu-2 {
+  padding-top: 16px;
+}/*# sourceMappingURL=style.css.map */

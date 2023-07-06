@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+$textcolor: #231f20;
+a {
+    text-decoration: none;
+}
+header {
+    .container-n {padding: 0 10px;
+        .top-menu {
+            .logo {
+                width: 120px;
+                img {
+                    width: 100%;
+                }
+            }
+            .icons {
+                img:last-child {
+                    width: 22px;
+                }
+            }
+            a {
+                color: $textcolor;
+                font-size: 12px;
+                border-left: 1px solid #ededed;
+                padding: 8px 0 0 10px;
+                margin-top: 5px;
+            }
+        }
+        .top-menu-2 {
+            padding-top: 16px;
+        }
+    }
+}
