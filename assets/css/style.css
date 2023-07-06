@@ -8,25 +8,99 @@ a {
   text-decoration: none;
 }
 
+li {
+  list-style: none;
+}
+
+header ul {
+  padding-left: 0;
+}
+header a {
+  color: #231f20;
+}
 header .container-n {
   padding: 0 10px;
 }
-header .container-n .top-menu .logo {
+header .container-n .top-header {
+  padding: 10px 0;
+}
+header .container-n .top-header .left .side-menu-btn img {
+  margin: 5px 15px 0 0;
+  width: 24px;
+}
+header .container-n .top-header .left .logo {
   width: 120px;
 }
-header .container-n .top-menu .logo img {
+header .container-n .top-header .left .logo img {
   width: 100%;
 }
-header .container-n .top-menu .icons img:last-child {
+header .container-n .top-header .right .icons img {
+  margin-right: 6px;
+}
+header .container-n .top-header .right .icons img:last-child {
+  margin-right: 8px;
   width: 22px;
 }
-header .container-n .top-menu a {
-  color: #231f20;
+header .container-n .top-header .right a {
   font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.12em;
   border-left: 1px solid #ededed;
-  padding: 8px 0 0 10px;
-  margin-top: 5px;
+  padding-left: 10px;
 }
-header .container-n .top-menu-2 {
+header .container-n .nav-1 {
+  font-size: 12px;
   padding-top: 16px;
+}
+header .container-n .nav-1 li {
+  padding-bottom: 12px;
+}
+header .container-n .nav-1 li a {
+  color: #5f6369;
+  letter-spacing: 0.12em;
+  line-height: 16px;
+}
+header .container-n .nav-1 li.active {
+  border-bottom: 2px solid #FAA61A;
+}
+header .container-n .nav-1 li.active a {
+  color: #231f20;
+}
+header .container-n .nav-1 li:not(:first-child) {
+  margin-left: 5px;
+}
+header .container-n .nav-1 .online {
+  display: inline-block;
+  background-color: #faa61a;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 7px;
+  border-radius: 5px;
+  margin-top: -12px;
+}
+header .container-n .nav-2 ul {
+  padding: 7px 0 8px;
+}
+header .container-n .nav-2 ul li {
+  margin-right: 20px;
+  letter-spacing: 0.06em;
+}
+header .container-n .nav-2::after {
+  content: "";
+  width: 35px;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.381390056) 0%, rgba(255, 255, 255, 0.8519782913) 49%, rgb(255, 255, 255) 100%);
+  right: -1px;
+  top: 0px;
+  height: 100%;
+  position: absolute;
+}
+
+footer ul {
+  padding: 20px 0;
+  margin: 0;
+}
+footer ul li {
+  margin: 15px 24px 0 14px;
 }/*# sourceMappingURL=style.css.map */
