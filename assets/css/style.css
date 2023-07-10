@@ -217,26 +217,31 @@ main #Slider .slider-card a {
   padding: 16px 30px;
   border-radius: 8px;
 }
-main #InterestNews {
-  background-color: #f5f5f5;
-  padding-bottom: 20px;
-}
-main #InterestNews .buttons {
-  padding-top: 28px;
+main .buttons {
+  display: flex;
+  overflow-x: scroll;
+  padding: 28px 0 0;
   border-bottom: 1px solid #d7d8d6;
 }
-main #InterestNews .buttons p {
+main .buttons p {
+  display: inline-block;
   color: #5f6369;
   font-size: 14px;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
   padding: 14px 0;
   margin: 0;
 }
-main #InterestNews .buttons p:first-child {
+main .buttons p:not(:last-child) {
   margin-right: 20px;
 }
-main #InterestNews .buttons p.active {
+main .buttons p.active {
   color: #231f20;
   border-bottom: 1px solid #5f6369;
+}
+main #InterestNews {
+  background-color: #f5f5f5;
+  padding-bottom: 20px;
 }
 main #InterestNews .interest-row {
   margin: 0 -22px;
@@ -320,4 +325,27 @@ main #InterestNews .news a {
   padding: 16px 0;
   border-radius: 8px;
   margin-top: 35px;
+}
+main #LoansCurrency table {
+  white-space: nowrap;
+  margin: 25px 0;
+  border-collapse: separate;
+}
+main #LoansCurrency table th, main #LoansCurrency table td {
+  font-size: 14px;
+  line-height: 160%;
+  letter-spacing: 0.06em;
+  text-align: center;
+  padding: 15px;
+  border-bottom: 1px solid #d7d8d6;
+}
+main #LoansCurrency table th.title, main #LoansCurrency table td.title {
+  color: #616173;
+}
+main #LoansCurrency table th img {
+  margin: -5px 20px 0 0;
+}
+main #LoansCurrency table th:not(.title) {
+  font-size: 18px;
+  line-height: 34px;
 }/*# sourceMappingURL=style.css.map */
