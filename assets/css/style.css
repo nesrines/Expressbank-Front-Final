@@ -223,7 +223,7 @@ main .buttons {
   padding: 28px 0 0;
   border-bottom: 1px solid #d7d8d6;
 }
-main .buttons p {
+main .buttons p, main .buttons span {
   display: inline-block;
   color: #5f6369;
   font-size: 14px;
@@ -232,10 +232,10 @@ main .buttons p {
   padding: 14px 0;
   margin: 0;
 }
-main .buttons p:not(:last-child) {
+main .buttons p:not(:last-child), main .buttons span:not(:last-child) {
   margin-right: 20px;
 }
-main .buttons p.active {
+main .buttons p.active, main .buttons span.active {
   color: #231f20;
   border-bottom: 1px solid #5f6369;
 }
