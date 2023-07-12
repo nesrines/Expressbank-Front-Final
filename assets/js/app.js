@@ -1,31 +1,20 @@
 $(() => {
-    $('.slider').slick({
-        infinite: true,
-        speed: 200,
-        autoplay: true,
-        autoplaySpeed: 2800,
-        slidesToShow: 1,
-        slidesToScroll: 1
-    });
-    let btns = document.querySelectorAll(".buttons p");
-    for (let btn of btns) {
-        btn.addEventListener("click", () => {
-            btn.parentElement.querySelector(".active").classList.remove("active");
-            btn.classList.add("active");
+    let tabButtonsFunction = btn => {
+        let button = document.querySelector(btn);
+        button.addEventListener('click', () => {
+            button.parentElement.querySelector(".active").classList.remove("active");
+            button.classList.add("active");
+            let div = document.querySelector(btn.replace('-btn', ''));
+            let siblingDivs = div.parentElement.querySelectorAll(':scope > :not(.buttons)');
+            for (let siblingDiv of siblingDivs) {
+                if (!(siblingDiv.className.includes('d-none')))
+                {siblingDiv.classList.add('d-none');}
+            }
+            if (div.className.includes('d-none')) {div.classList.remove('d-none');}
         })
     }
-    document.querySelector('.interest-btn').addEventListener("click", () => {
-        document.querySelector('.interest').className = "interest";
-        document.querySelector('.news').className = "news d-none";
-    })
-    document.querySelector('.news-button').addEventListener("click", () => {
-        document.querySelector('.interest').className = "interest d-none";
-        document.querySelector('.news').className = "news";
-    })
-
-    let date = new Date();
-    let month = date.getMonth() + 1;
-    if (month < 10) {month = `0${month}`;}
-    let currentDate = `${date.getDate()}-${month}-${date.getFullYear()}`;
-    document.querySelector(".current-date").innerHTML = currentDate;
+    let btns = document.querySelectorAll(".buttons p");
+    let btnClassNames = [];
+    for (let btn of btns) {btnClassNames.push('.' + btn.classList[0]);}
+    for (let btn of btnClassNames) {tabButtonsFunction(btn);}
 })

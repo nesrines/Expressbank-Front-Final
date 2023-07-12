@@ -1,19 +1,18 @@
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-}
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
 }
 $darktext: #231f20;
 $greytext: #5f6369;
-a { text-decoration: none; }
-li { list-style: none; }
-h1, h2, h3, h4,h5, h6 { font-weight: normal; }
-.container-n { padding: 0 10px; }
-
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    a { text-decoration: none; }
+    li { list-style: none; }
+    h1, h2, h3, h4,h5, h6 { font-weight: normal; }
+    .container-n { padding: 0 10px; }
+}
 header {
     ul { padding-left: 0; }
     a { color: $darktext; }
@@ -96,13 +95,12 @@ header {
         }
         &::before{
             content: "";
+            position: absolute;
             width: 35px;
-            background: rgb(255,255,255);
-            background: linear-gradient(90deg, rgba(255,255,255,0.38139005602240894) 0%, rgba(255,255,255,0.8519782913165266) 49%, rgba(255,255,255,1) 100%);
+            background: linear-gradient(90deg, #ffffff51 0%, #ffffffc9 49%, #ffffffff 100%);
             right: -1px;
             top: 0px;
             height: 100%;
-            position: absolute;
         }
     }
     
@@ -319,6 +317,96 @@ main {
                 &:not(.title) {
                     font-size: 18px;
                     line-height: 34px;
+                }
+            }
+        }
+    }
+    .page-title {
+        background: url('https://expressbank.az/img/24bg.png') no-repeat center center;
+        background-size: cover;
+        color: #ffffff;
+        letter-spacing: 0.05em;
+        h3 {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 110%;
+            padding: 15px 0 0;
+            margin: 0;
+        }
+        p {
+            font-size: 14px;
+            padding: 0 0 15px;
+            margin: 10px 0 0;
+        }
+    }
+    #Cards {
+        .debit-cards {
+            margin-top: 48px;
+            .debit-card {
+                margin: 0 5px;
+                padding-bottom: 24px;
+                .debit-image {
+                    position: relative;
+                    min-height: 250px;
+                    margin-top: -20px;
+                    img {
+                        position: absolute;
+                        height: 250px;
+                        display: inline-block;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                    }
+                }
+                .debit-content {
+                    padding: 0 24px;
+                    color: $darktext;
+                    h4 {
+                        font-size: 24px;
+                        font-weight: 600;
+                        margin: 20px 0 10px;
+                    }
+                    p {
+                        color: $greytext;
+                        font-size: 14px;
+                        line-height: 140%;
+                        margin: 0 0 22px;
+                    }
+                    ul {
+                        padding: 0;
+                        margin: 0 0 15px;
+                        li {
+                            width: 110px;
+                            text-align: center;
+                            padding: 0 8px 0 0;
+                            &:not(:first-child) {
+                                border-left: 1px solid #d7d8d6;
+                                margin: 0 0 0 8px;
+                            }
+                            h5 {
+                                font-size: 16px;
+                                font-weight: 600;
+                                margin: 0 0 10px;
+                            }
+                            p {
+                                font-size: 13px;
+                                margin: 0;
+                            }
+                        }
+                    }
+                    a {
+                        display: block;
+                        background-color: #f9c20a;
+                        color: $darktext;
+                        font-size: 14px;
+                        line-height: 16px;
+                        letter-spacing: 0.12px;
+                        text-align: center;
+                        padding: 16px 30px;
+                        border-radius: 8px;
+                        margin-bottom: 5px;
+                    }
                 }
             }
         }
