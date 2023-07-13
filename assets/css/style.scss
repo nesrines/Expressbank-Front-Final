@@ -2,9 +2,17 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: Proxima Nova;
+}
+@font-face {
+    font-family: Proxima Nova;
+    src: url('../fonts/ProximaNova-Regular.woff2');
 }
 $darktext: #231f20;
 $greytext: #5f6369;
+$greyborder: #d7d8d6;
+$normal: 0.06em;
+$double: 0.12em;
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -14,6 +22,8 @@ html, body {
     .container-n { padding: 0 10px; }
 }
 header {
+    background-color: #ffffff;
+    z-index: 1;
     ul { padding-left: 0; }
     a { color: $darktext; }
     .top-header, .nav-1, .nav-2 {
@@ -22,7 +32,7 @@ header {
             content: "";
             position: absolute;
             left: -10px;
-            bottom: 0;
+            bottom: -1px;
             width: 105vw;
             height: 1px;
             background-color: #f5f5f5;
@@ -50,7 +60,7 @@ header {
             }
             span {
                 font-size: 12px;
-                letter-spacing: 0.12em;
+                letter-spacing: $double;
                 border-left: 1px solid #ededed;
                 padding: 7px 0 7px 10px;
             }
@@ -64,10 +74,10 @@ header {
             a {
                 height: 18px;
                 color: $greytext;
-                letter-spacing: 0.12em;
+                letter-spacing: $double;
             }
             &.active {
-                border-bottom: 2px solid #FAA61A;
+                border-bottom: 2px solid #faa61a;
                 a { color: $darktext; }
             }
             &:not(:first-child) { margin-left: 5px; }
@@ -89,16 +99,24 @@ header {
             margin-bottom: 0;
             li {
                 margin-right: 20px;
-                letter-spacing: 0.06em;
-                &.active { border-bottom: 2px solid #FAA61A; }
+                letter-spacing: $normal;
+                position: relative;
+                &.active::after {
+                    content: "";
+                    position: absolute;
+                    left: 0;
+                    bottom: -7px;
+                    background-color: #faa61a;
+                    width: 100%;
+                    height: 2px;
+                }
             }
         }
         &::before{
             content: "";
             position: absolute;
             width: 35px;
-            background: linear-gradient(90deg, #ffffff51 0%, #ffffffc9 49%, #ffffffff 100%);
-            right: -1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.38139005602240894) 0%, rgba(255,255,255,0.8519782913165266) 49%, #ffffff 100%);            right: -1px;
             top: 0px;
             height: 100%;
         }
@@ -108,7 +126,7 @@ header {
 #Whelp {
     right: 24px;
     bottom: 24px;
-    z-index: 5;
+    z-index: 1;
     background-color: #ffa300;
     padding: 8px;
     border-radius: 50%;
@@ -163,13 +181,12 @@ footer {
         color: $greytext;
         font-size: 18px;
         line-height: 160%;
-        letter-spacing: 0.06em;
+        letter-spacing: $normal;
         padding: 20px 0;
         border-top: 1px solid #c5c6c455;
         margin: 20px 0 0;
     }
 }
-
 main {
     #Slider {
         .slider-card {
@@ -186,7 +203,7 @@ main {
                 color: $darktext;
                 background-color: #f9c20a;
                 font-size: 14px;
-                letter-spacing: 0.12em;
+                letter-spacing: $double;
                 padding: 16px 30px;
                 border-radius: 8px;
             }
@@ -196,12 +213,12 @@ main {
         display: flex;
         overflow-x: scroll;
         padding: 28px 0 0;
-        border-bottom: 1px solid #d7d8d6;
+        border-bottom: 1px solid $greyborder;
         p, span {
             display: inline-block;
             color: $greytext;
             font-size: 14px;
-            letter-spacing: 0.06em;
+            letter-spacing: $normal;
             white-space: nowrap;
             padding: 14px 0;
             margin: 0;
@@ -211,6 +228,20 @@ main {
                 border-bottom: 1px solid $greytext;
             }
         }
+    }
+    .grey-btn {
+        background-color: #f5f5f5;
+        color: $darktext;
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: $normal;
+        text-align: center;
+        white-space: nowrap;
+        padding: 16px 0;
+        border-radius: 8px;
+        cursor: pointer;
+        &:hover { background-color: #faa61a; }
+        &:focus, &:active { background-color: #f58220 }
     }
     #InterestNews {
         background-color: #f5f5f5;
@@ -225,7 +256,7 @@ main {
                 height: 400px;
                 padding-bottom: 24px;
                 border-radius: 8px;
-                margin: 22px 0 0 15px;
+                margin: 22px 5px 0 20px;
                 .interest-image {
                     top: -15px;
                     width: 100%;
@@ -239,24 +270,18 @@ main {
                         color: $greytext;
                         font-size: 10px;
                         line-height: 16px;
-                        letter-spacing: 0.12em;
+                        letter-spacing: $double;
                         padding: 6px 12px;
-                        border: 1px solid #d7d8d6;
+                        border: 1px solid $greyborder;
                         border-radius: 4px;
                     }
                     h3 {
                         font-size: 16px;
                         line-height: 120%;
-                        letter-spacing: 0.06em;
+                        letter-spacing: $normal;
                         margin-top: 20px;
                     }
                     a {
-                        white-space: nowrap;
-                        background-color: #f5f5f5;
-                        color: $darktext;
-                        font-size: 14px;
-                        padding: 16px 0;
-                        border-radius: 8px;
                         margin-top: 18px;
                     }
                 }
@@ -278,7 +303,7 @@ main {
                         color: $darktext;
                         font-size: 18px;
                         line-height: 160%;
-                        letter-spacing: 0.06em;
+                        letter-spacing: $normal;
 
                     }
                     p {
@@ -289,11 +314,6 @@ main {
             }
             a {
                 background-color: #ffffff;
-                color: $darktext;
-                font-size: 14px;
-                line-height: 24px;
-                padding: 16px 0;
-                border-radius: 8px;
                 margin-top: 35px;
             }
         }
@@ -306,10 +326,10 @@ main {
             th, td {
                 font-size: 14px;
                 line-height: 160%;
-                letter-spacing: 0.06em;
+                letter-spacing: $normal;
                 text-align: center;
                 padding: 15px;
-                border-bottom: 1px solid #d7d8d6;
+                border-bottom: 1px solid $greyborder;
                 &.title { color: #616173; }
             }
             th {
@@ -320,15 +340,75 @@ main {
                 }
             }
         }
+        p.exchange-alert {
+            color: #000000;
+            font-size: 18px;
+            padding: 0 0 110px;
+            margin: 15px 0 0;
+        }
+    }
+    #Download {
+        background: url('https://expressbank.az/img/24bg.png') no-repeat center center;
+        background-size: cover;
+        padding: 150px 0 40px;
+        .invisible-img-div {
+            position: relative;
+            img {
+                position: absolute;
+                transform: translateX(-50%);
+                left: 50%;
+                bottom: 0;
+                max-height: 200px;
+            }
+        }
+        .download-content {
+            color: #ffffff;
+            letter-spacing: $normal;
+            margin: 0 0 20px;
+            h3 {
+                font-size: 20px;
+                line-height: 120%;
+                margin: 0;
+            }
+            p {
+                font-size: 16px;
+                line-height: 160%;
+                margin: 10px 0 0;
+            }
+        }
+        .download-btns {
+            a {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #ffffff;
+                color: $darktext;
+                min-width: 165px;
+                min-height: 56px;
+                font-size: 16px;
+                padding: 0 10px;
+                border: 1px solid $greyborder;
+                border-radius: 8px;
+                margin: 10px 10px 0 0;
+                &:last-child {
+                    font-size: 14px;
+                    margin-right: 0;
+                }
+                img {
+                    display: inline-flex;
+                    margin-right: 5px;
+                }
+            }
+        }
     }
     .page-title {
         background: url('https://expressbank.az/img/24bg.png') no-repeat center center;
         background-size: cover;
         color: #ffffff;
-        letter-spacing: 0.05em;
+        letter-spacing: $normal;
         h3 {
             font-size: 24px;
-            font-weight: 700;
+            font-weight: 800;
             line-height: 110%;
             padding: 15px 0 0;
             margin: 0;
@@ -340,12 +420,14 @@ main {
         }
     }
     #Cards {
-        .debit-cards {
-            margin-top: 48px;
-            .debit-card {
-                margin: 0 5px;
+        background-color: #f5f5f5;
+        .debit-cards, .credit-cards {
+            .card-box {
+                background-color: #ffffff;
                 padding-bottom: 24px;
-                .debit-image {
+                border-radius: 8px;
+                margin: 70px 5px;
+                .card-image {
                     position: relative;
                     min-height: 250px;
                     margin-top: -20px;
@@ -359,7 +441,7 @@ main {
                         margin: 0 auto;
                     }
                 }
-                .debit-content {
+                .card-content {
                     padding: 0 24px;
                     color: $darktext;
                     h4 {
@@ -373,25 +455,42 @@ main {
                         line-height: 140%;
                         margin: 0 0 22px;
                     }
-                    ul {
-                        padding: 0;
-                        margin: 0 0 15px;
-                        li {
-                            width: 110px;
-                            text-align: center;
-                            padding: 0 8px 0 0;
-                            &:not(:first-child) {
-                                border-left: 1px solid #d7d8d6;
-                                margin: 0 0 0 8px;
+                    .list-container {
+                        position: relative;
+                        ul {
+                            padding: 0;
+                            margin: 0 0 15px;
+                            &::before{
+                                content: "";
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                width: 35px;
+                                height: 100%;
+                                background: linear-gradient(90deg, rgba(255,255,255,0.38139005602240894) 0%, rgba(255,255,255,0.8519782913165266) 49%, #ffffff 100%);            right: -1px;
                             }
-                            h5 {
-                                font-size: 16px;
-                                font-weight: 600;
-                                margin: 0 0 10px;
-                            }
-                            p {
-                                font-size: 13px;
-                                margin: 0;
+                            li {
+                                min-width: 110px;
+                                max-width: 110px;
+                                text-align: center;
+                                padding: 0 8px 0 0;
+                                border-right: 1px solid $greyborder;
+                                margin: 0 8px 0 0;
+                                &:last-child {
+                                    padding: 0;
+                                    border: none;
+                                    margin: 0;
+                                }
+                                h5 {
+                                    font-size: 16px;
+                                    font-weight: 600;
+                                    margin: 0 0 10px;
+                                }
+                                p {
+                                    font-size: 13px;
+                                    letter-spacing: $normal;
+                                    margin: 0;
+                                }
                             }
                         }
                     }
@@ -401,7 +500,7 @@ main {
                         color: $darktext;
                         font-size: 14px;
                         line-height: 16px;
-                        letter-spacing: 0.12px;
+                        letter-spacing: $double;
                         text-align: center;
                         padding: 16px 30px;
                         border-radius: 8px;

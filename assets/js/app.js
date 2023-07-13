@@ -1,4 +1,9 @@
 $(() => {
+    window.onscroll = () => {
+        if (window.scrollY >= 160)
+        {document.querySelector('header').style.position = 'fixed';}
+        else {document.querySelector('header').style.position = 'static';}
+    };
     let tabButtonsFunction = btn => {
         let button = document.querySelector(btn);
         button.addEventListener('click', () => {
@@ -11,8 +16,8 @@ $(() => {
                 {siblingDiv.classList.add('d-none');}
             }
             if (div.className.includes('d-none')) {div.classList.remove('d-none');}
-        })
-    }
+        });
+    };
     let btns = document.querySelectorAll(".buttons p");
     let btnClassNames = [];
     for (let btn of btns) {btnClassNames.push('.' + btn.classList[0]);}

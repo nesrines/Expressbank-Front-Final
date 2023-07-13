@@ -2,8 +2,13 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: Proxima Nova;
 }
 
+@font-face {
+  font-family: Proxima Nova;
+  src: url("../fonts/ProximaNova-Regular.woff2");
+}
 html, body {
   max-width: 100%;
   overflow-x: hidden;
@@ -21,6 +26,10 @@ html .container-n, body .container-n {
   padding: 0 10px;
 }
 
+header {
+  background-color: #ffffff;
+  z-index: 1;
+}
 header ul {
   padding-left: 0;
 }
@@ -34,7 +43,7 @@ header .top-header::after, header .nav-1::after, header .nav-2::after {
   content: "";
   position: absolute;
   left: -10px;
-  bottom: 0;
+  bottom: -1px;
   width: 105vw;
   height: 1px;
   background-color: #f5f5f5;
@@ -78,7 +87,7 @@ header .nav-1 li a {
   letter-spacing: 0.12em;
 }
 header .nav-1 li.active {
-  border-bottom: 2px solid #FAA61A;
+  border-bottom: 2px solid #faa61a;
 }
 header .nav-1 li.active a {
   color: #231f20;
@@ -103,15 +112,22 @@ header .nav-2 ul {
 header .nav-2 ul li {
   margin-right: 20px;
   letter-spacing: 0.06em;
+  position: relative;
 }
-header .nav-2 ul li.active {
-  border-bottom: 2px solid #FAA61A;
+header .nav-2 ul li.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  background-color: #faa61a;
+  width: 100%;
+  height: 2px;
 }
 header .nav-2::before {
   content: "";
   position: absolute;
   width: 35px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.3176470588) 0%, rgba(255, 255, 255, 0.7882352941) 49%, white 100%);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.381390056) 0%, rgba(255, 255, 255, 0.8519782913) 49%, #ffffff 100%);
   right: -1px;
   top: 0px;
   height: 100%;
@@ -120,7 +136,7 @@ header .nav-2::before {
 #Whelp {
   right: 24px;
   bottom: 24px;
-  z-index: 5;
+  z-index: 1;
   background-color: #ffa300;
   padding: 8px;
   border-radius: 50%;
@@ -234,6 +250,24 @@ main .buttons p.active, main .buttons span.active {
   color: #231f20;
   border-bottom: 1px solid #5f6369;
 }
+main .grey-btn {
+  background-color: #f5f5f5;
+  color: #231f20;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  white-space: nowrap;
+  padding: 16px 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+main .grey-btn:hover {
+  background-color: #faa61a;
+}
+main .grey-btn:focus, main .grey-btn:active {
+  background-color: #f58220;
+}
 main #InterestNews {
   background-color: #f5f5f5;
   padding-bottom: 20px;
@@ -249,7 +283,7 @@ main #InterestNews .interest-row .interest-card {
   height: 400px;
   padding-bottom: 24px;
   border-radius: 8px;
-  margin: 22px 0 0 15px;
+  margin: 22px 5px 0 20px;
 }
 main #InterestNews .interest-row .interest-card .interest-image {
   top: -15px;
@@ -279,12 +313,6 @@ main #InterestNews .interest-row .interest-card .interest-content h3 {
   margin-top: 20px;
 }
 main #InterestNews .interest-row .interest-card .interest-content a {
-  white-space: nowrap;
-  background-color: #f5f5f5;
-  color: #231f20;
-  font-size: 14px;
-  padding: 16px 0;
-  border-radius: 8px;
   margin-top: 18px;
 }
 main #InterestNews .news {
@@ -314,11 +342,6 @@ main #InterestNews .news .news-row .news-card p {
 }
 main #InterestNews .news a {
   background-color: #ffffff;
-  color: #231f20;
-  font-size: 14px;
-  line-height: 24px;
-  padding: 16px 0;
-  border-radius: 8px;
   margin-top: 35px;
 }
 main #LoansCurrency table {
@@ -344,15 +367,73 @@ main #LoansCurrency table th:not(.title) {
   font-size: 18px;
   line-height: 34px;
 }
+main #LoansCurrency p.exchange-alert {
+  color: #000000;
+  font-size: 18px;
+  padding: 0 0 110px;
+  margin: 15px 0 0;
+}
+main #Download {
+  background: url("https://expressbank.az/img/24bg.png") no-repeat center center;
+  background-size: cover;
+  padding: 150px 0 40px;
+}
+main #Download .invisible-img-div {
+  position: relative;
+}
+main #Download .invisible-img-div img {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  bottom: 0;
+  max-height: 200px;
+}
+main #Download .download-content {
+  color: #ffffff;
+  letter-spacing: 0.06em;
+  margin: 0 0 20px;
+}
+main #Download .download-content h3 {
+  font-size: 20px;
+  line-height: 120%;
+  margin: 0;
+}
+main #Download .download-content p {
+  font-size: 16px;
+  line-height: 160%;
+  margin: 10px 0 0;
+}
+main #Download .download-btns a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  color: #231f20;
+  min-width: 165px;
+  min-height: 56px;
+  font-size: 16px;
+  padding: 0 10px;
+  border: 1px solid #d7d8d6;
+  border-radius: 8px;
+  margin: 10px 10px 0 0;
+}
+main #Download .download-btns a:last-child {
+  font-size: 14px;
+  margin-right: 0;
+}
+main #Download .download-btns a img {
+  display: inline-flex;
+  margin-right: 5px;
+}
 main .page-title {
   background: url("https://expressbank.az/img/24bg.png") no-repeat center center;
   background-size: cover;
   color: #ffffff;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 main .page-title h3 {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 110%;
   padding: 15px 0 0;
   margin: 0;
@@ -362,19 +443,21 @@ main .page-title p {
   padding: 0 0 15px;
   margin: 10px 0 0;
 }
-main #Cards .debit-cards {
-  margin-top: 48px;
+main #Cards {
+  background-color: #f5f5f5;
 }
-main #Cards .debit-cards .debit-card {
-  margin: 0 5px;
+main #Cards .debit-cards .card-box, main #Cards .credit-cards .card-box {
+  background-color: #ffffff;
   padding-bottom: 24px;
+  border-radius: 8px;
+  margin: 70px 5px;
 }
-main #Cards .debit-cards .debit-card .debit-image {
+main #Cards .debit-cards .card-box .card-image, main #Cards .credit-cards .card-box .card-image {
   position: relative;
   min-height: 250px;
   margin-top: -20px;
 }
-main #Cards .debit-cards .debit-card .debit-image img {
+main #Cards .debit-cards .card-box .card-image img, main #Cards .credit-cards .card-box .card-image img {
   position: absolute;
   height: 250px;
   display: inline-block;
@@ -383,50 +466,68 @@ main #Cards .debit-cards .debit-card .debit-image img {
   right: 0;
   margin: 0 auto;
 }
-main #Cards .debit-cards .debit-card .debit-content {
+main #Cards .debit-cards .card-box .card-content, main #Cards .credit-cards .card-box .card-content {
   padding: 0 24px;
   color: #231f20;
 }
-main #Cards .debit-cards .debit-card .debit-content h4 {
+main #Cards .debit-cards .card-box .card-content h4, main #Cards .credit-cards .card-box .card-content h4 {
   font-size: 24px;
   font-weight: 600;
   margin: 20px 0 10px;
 }
-main #Cards .debit-cards .debit-card .debit-content p {
+main #Cards .debit-cards .card-box .card-content p, main #Cards .credit-cards .card-box .card-content p {
   color: #5f6369;
   font-size: 14px;
   line-height: 140%;
   margin: 0 0 22px;
 }
-main #Cards .debit-cards .debit-card .debit-content ul {
+main #Cards .debit-cards .card-box .card-content .list-container, main #Cards .credit-cards .card-box .card-content .list-container {
+  position: relative;
+}
+main #Cards .debit-cards .card-box .card-content .list-container ul, main #Cards .credit-cards .card-box .card-content .list-container ul {
   padding: 0;
   margin: 0 0 15px;
 }
-main #Cards .debit-cards .debit-card .debit-content ul li {
-  width: 110px;
+main #Cards .debit-cards .card-box .card-content .list-container ul::before, main #Cards .credit-cards .card-box .card-content .list-container ul::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 35px;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.381390056) 0%, rgba(255, 255, 255, 0.8519782913) 49%, #ffffff 100%);
+  right: -1px;
+}
+main #Cards .debit-cards .card-box .card-content .list-container ul li, main #Cards .credit-cards .card-box .card-content .list-container ul li {
+  min-width: 110px;
+  max-width: 110px;
   text-align: center;
   padding: 0 8px 0 0;
+  border-right: 1px solid #d7d8d6;
+  margin: 0 8px 0 0;
 }
-main #Cards .debit-cards .debit-card .debit-content ul li:not(:first-child) {
-  border-left: 1px solid #d7d8d6;
-  margin: 0 0 0 8px;
+main #Cards .debit-cards .card-box .card-content .list-container ul li:last-child, main #Cards .credit-cards .card-box .card-content .list-container ul li:last-child {
+  padding: 0;
+  border: none;
+  margin: 0;
 }
-main #Cards .debit-cards .debit-card .debit-content ul li h5 {
+main #Cards .debit-cards .card-box .card-content .list-container ul li h5, main #Cards .credit-cards .card-box .card-content .list-container ul li h5 {
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 10px;
 }
-main #Cards .debit-cards .debit-card .debit-content ul li p {
+main #Cards .debit-cards .card-box .card-content .list-container ul li p, main #Cards .credit-cards .card-box .card-content .list-container ul li p {
   font-size: 13px;
+  letter-spacing: 0.06em;
   margin: 0;
 }
-main #Cards .debit-cards .debit-card .debit-content a {
+main #Cards .debit-cards .card-box .card-content a, main #Cards .credit-cards .card-box .card-content a {
   display: block;
   background-color: #f9c20a;
   color: #231f20;
   font-size: 14px;
   line-height: 16px;
-  letter-spacing: 0.12px;
+  letter-spacing: 0.12em;
   text-align: center;
   padding: 16px 30px;
   border-radius: 8px;
