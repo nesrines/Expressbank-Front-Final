@@ -1,8 +1,8 @@
 $(() => {
     window.onscroll = () => {
         if (window.scrollY >= 160)
-        {document.querySelector('header').style.position = 'fixed';}
-        else {document.querySelector('header').style.position = 'static';}
+        {document.querySelector('header, header *').style.position = 'fixed';}
+        else {document.querySelector('header, header *').style.position = 'static';}
     };
     let tabButtonsFunction = btn => {
         let button = document.querySelector(btn);
