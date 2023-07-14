@@ -35,13 +35,15 @@
                     <span> AZ <img src="https://expressbank.az/assets/img/lang_arrow_down.6ad2433a.svg"></span>
                 </div>
             </div>
-            <nav class="nav-1 d-flex justify-content-between align-items-center">
-                <ul class="d-inline">
-                    <li class="d-inline active"><a href="#" class="d-inline-block">SİZİN ÜÇÜN</a></li>
-                    <li class="d-inline">/</li>
-                    <li class="d-inline"><a href="#" class="d-inline-block">BİZNES ÜÇÜN</a></li>
-                </ul>
-                <a class="online d-inline-block" href="online-queue.html">ONLAYN NÖVBƏ</a>
+            <nav class="nav-1">
+                <div class="d-flex justify-content-between align-items-center">
+                    <ul class="d-inline">
+                        <li class="d-inline active"><a href="#" class="d-inline-block">SİZİN ÜÇÜN</a></li>
+                        <li class="d-inline">/</li>
+                        <li class="d-inline"><a href="#" class="d-inline-block">BİZNES ÜÇÜN</a></li>
+                    </ul>
+                    <a class="online d-inline-block" href="onlineq.html">ONLAYN NÖVBƏ</a>
+                </div>
             </nav>
             <nav class="nav-2 position-relative">
                 <ul class="d-flex flex-nowrap overflow-x-scroll">
@@ -54,11 +56,75 @@
             </nav>
         </div>
     </header>
-
+    <div class="side-menu d-none">
+        <ul>
+            <li>
+                <a href="index.html" class="title">SİZİN ÜÇÜN</a>
+                <ul>
+                    <li><a href="loans.html">Kreditlər</a></li>
+                    <li><a href="cards.html">Kartlar</a></li>
+                    <li><a href="#">Əmanətlər</a></li>
+                    <li><a href="#">Köçürmələr</a></li>
+                    <li><a href="#">Digər xidmətlər</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="title">BİZNES ÜÇÜN</a>
+                <ul>
+                    <li><a href="#">Kreditlər</a></li>
+                    <li><a href="#">Kartlar</a></li>
+                    <li><a href="#">Digər xidmətlər</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="title">HAQQIMIZDA</a>
+                <ul>
+                    <li><a href="info.html">Ümumi məlumat</a></li>
+                    <li><a href="#">Hesabatlar</a></li>
+                    <li><a href="#">Sənədlər toplusu</a></li>
+                    <li><a href="#">Karyera </a></li>
+                    <li><a href="#">Ünvanlarımız</a></li>
+                    <li><a href="#">Expressbank online</a></li>
+                    <li><a href="#">Tərəfdaşlarımız</a></li>
+                    <li><a href="#">Məlumat mərkəzi</a></li>
+                    <li><a href="#">T&amp;C</a></li>
+                    <li><a href="#">İstifadə qaydaları və konfidensiallıq siyasəti</a></li>
+                </ul>
+            </li>
+        </ul>
+        <a class="online d-block" href="onlineq.html">ONLAYN NÖVBƏ</a>
+       <ul class="contact">
+            <li><a href="#">
+                <img width="13.78px" src="https://adminpanel.expressbank.az/images/menus/expressbank_148_1624424642.svg">
+                <span>EXPRESSBANK ONLINE</span>
+            </a></li>
+            <li><a href="#">
+                <img width="14.72px" src="https://adminpanel.expressbank.az/images/menus/marker.svg">
+                <span>ÜNVANLARIMIZ</span>
+            </a></li>
+            <li><a href="tel:132">
+                <img width="18px" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJ/SURBVHgBrVVLctpAEO0egTDZhGWCXBXdIHCCmBuYJfbCcALgBMAJAifAWQBV2ZicAN8AbmAtApVdWAUjgTrdY4mPEgIRfgtGMy36zfTreQKIgB7sjDe4vIJXAu5O3N5lFdBvB9NJMm0WsOjM4Qyo8MEbZBuSnACGPmCdl3Lewh3TwLbhDGiCRc8qE0GTHydm2qxc3EzbgFjhue2RO5KyQUxoAoXU4MHZLYlZmt5vSBbuCGJCUdfOsBC2D9SJ1ltIfD8oV0zhNxog4V/LoAz6KOMKVg7EIcAK75pgjgo+RIPuINvlmOjTSpd+OBADwQnwCye63hXT61ufw+Sp21kTYkIToMIhD5nlYlnehsjmn7n5xmzDGdAEydL3R+6YRwVY3URQdYTU/eXW4AxsRQZs8WA/99/XQlK5dIjQcL9aOYiJfasYWCMgyiXRzGPJcaSF3ZQ7lpd4rSBr8J9Qu5M1rCssLHjgdTU7d5iPfoHXMvpG/8M2DsX2CKQVfeRSEV1pbwrWmOogyYLny372iWNPbj87jtqKijJqHyLsiDeFJObtdLJWfp4PB5xoHOokyRWTSgnR0F4mBrnnXQgHwLt64OA1i9xMlmatl4TvbAOMrpyQpw4FCdZcRjkpa1jmmJR3Y/UHCURgL6VNLrdL8kJklQ0i3dKcvLh7y/8ggSNwexZbN1WlZU0066d0UkjCBlpXx17m+tfELqRcIvKqb90d+w/4+FaGhKF+Hj1BCKm/IiWC2jydIKq6doAIZAO883t5x7yZ5U8m2BJZZUXUCIgcdoAh28y3YOufwi/jUZFPITIA7oKO2oI9LXmRLIYfr9gEIaTnV88r7VUJSDjRJvgN7PxEVV51et0AAAAASUVORK5CYII=">
+                <span>132</span>
+            </a></li>
+        </ul>
+        <ul class="social-icons d-flex justify-content-center">
+            <li><a href="https://www.youtube.com/expressbankasc" target="_blank">
+                <img src="https://adminpanel.expressbank.az//images/social_icons/youtube.svg">
+            </a></li>
+            <li><a href="https://www.linkedin.com/company/expressbankasc" target="_blank">
+                <img src="https://adminpanel.expressbank.az//images/social_icons/linkedin.svg">
+            </a></li>
+            <li><a href="https://www.instagram.com/expressbank/" target="_blank">
+                <img src="https://adminpanel.expressbank.az//images/social_icons/instagram.svg">
+            </a></li>
+            <li><a href="https://www.facebook.com/Expressbank" target="_blank">
+                <img src="https://adminpanel.expressbank.az//images/social_icons/facebook.svg">
+            </a></li>
+        </ul>
+    </div>
     <div id="Whelp" class="position-fixed">
         <img src="https://cdn.getwhelp.com/livechat-default-icon.png">
     </div>
-
     <main>
         <section id="Slider">
             <div class="container-n">
@@ -70,7 +136,7 @@
                         <div class="slider-card-content">
                             <h1>Nağd istehlak krediti</h1>
                             <p>Ev təmiri, təhsil, toy, səyahət və ya avtomobil almaq planlarınız üçün nağd pul lazımdırsa, bu kredit SİZİN üçündür!</p>
-                            <a href="#" class="d-block">SİFARİŞ ETMƏK</a>
+                            <a href="#" class="my-btn yellow-btn">SİFARİŞ ETMƏK</a>
                         </div>
                     </div>
                     <div class="slider-card d-flex flex-column justify-content-between">
@@ -80,7 +146,7 @@
                         <div class="slider-card-content">
                             <h1>Qızıl girovlu kredit</h1>
                             <p>Rəsmi gəliriniz istədiyiniz məbləği əldə etməyə imkan vermirsə, o zaman bu məhsul SİZİN üçündür!</p>
-                            <a href="#" class="d-block">ƏTRAFLI</a>
+                            <a href="#" class="my-btn yellow-btn">ƏTRAFLI</a>
                         </div>
                     </div>
                 </div>
@@ -101,7 +167,7 @@
                             <div class="interest-content w-100 position-absolute start-0 bottom-0">
                                 <h4 class="d-inline-block">KREDİTLƏR</h4>
                                 <h3>Nağd istehlak krediti</h3>
-                                <a href="#" class="d-block grey-btn">SİFARİŞ ETMƏK</a>
+                                <a href="#" class="my-btn grey-btn">SİFARİŞ ETMƏK</a>
                             </div>
                         </div>
                         <div class="interest-card position-relative">
@@ -111,7 +177,7 @@
                             <div class="interest-content w-100 position-absolute start-0 bottom-0">
                                 <h4 class="d-inline-block">KREDİTLƏR</h4>
                                 <h3>İpoteka krediti</h3>
-                                <a href="#" class="d-block grey-btn">SİFARİŞ ETMƏK</a>
+                                <a href="#" class="my-btn grey-btn">SİFARİŞ ETMƏK</a>
                             </div>
                         </div>
                         <div class="interest-card position-relative">
@@ -121,7 +187,7 @@
                             <div class="interest-content w-100 position-absolute start-0 bottom-0">
                                 <h4 class="d-inline-block">KREDİTLƏR</h4>
                                 <h3>Qızıl girovlu kredit</h3>
-                                <a href="#" class="d-block grey-btn">SİFARİŞ ETMƏK</a>
+                                <a href="#" class="my-btn grey-btn">SİFARİŞ ETMƏK</a>
                             </div>
                         </div>
                         <div class="interest-card position-relative">
@@ -131,7 +197,7 @@
                             <div class="interest-content w-100 position-absolute start-0 bottom-0">
                                 <h4 class="d-inline-block">BÜTÜN ƏMANƏTLƏR</h4>
                                 <h3>Bank seyfləri</h3>
-                                <a href="#" class="d-block grey-btn">SİFARİŞ ETMƏK</a>
+                                <a href="#" class="my-btn grey-btn">SİFARİŞ ETMƏK</a>
                             </div>
                         </div>
                     </div>
@@ -151,20 +217,65 @@
                             <p class="news-date position-absolute">02 iyun 2023</p>
                         </div>
                     </div>
-                    <a href="#InterestNews" class="d-block grey-btn">BÜTÜN XƏBƏRLƏR</a>
+                    <a href="#InterestNews" class="my-btn grey-btn">BÜTÜN XƏBƏRLƏR</a>
                 </div>
             </div>
         </section>
         <section id="LoansCurrency">
             <div class="container-n">
                 <div class="buttons">
-                    <p class="mortgage-btn">İpoteka krediti</p>
+                    <p class="mortgage-btn active">İpoteka krediti</p>
                     <p class="gold-btn">Qızıl girovlu kredit</p>
-                    <p class="currency-btn active">Valyuta məzənnəsi</p>
+                    <p class="currency-btn">Valyuta məzənnəsi</p>
                 </div>
-                <div class="mortgage d-none"></div>
-                <div class="gold d-none"></div>
-                <div class="currency">
+                <div class="tab">
+                    <div class="mortgage gold">
+                        <h4>Kalkulyator</h4>
+                        <div class="calc-container">
+                            <div class="input-container">
+                                <h5 class="calc-title">Məlumatları daxil edin</h5>
+                                <div class="form-element">
+                                    <h6 class="group-label">Kreditin məbləği</h6>
+                                    <p id="Amount" class="value">5000</p>
+                                    <p class="azn">AZN</p>
+                                    <input type="range" id="AmountSlider" value="5000" min="5000" max="150000" step="100" style="background: linear-gradient(90deg, rgb(249, 194, 10) 3.33333%, rgb(226, 226, 226) 0)">
+                                </div>
+                                <div class="form-element">
+                                    <h6 class="group-label">Kreditin müddəti (ay)</h6>
+                                    <p id="Month" class="value">120</p>
+                                    <input type="range" id="MonthSlider" value="120" min="12" max="360" step="1" style="background: linear-gradient(90deg, rgb(249, 194, 10) 33.3333%, rgb(226, 226, 226) 0)">
+                                </div>
+                                <div class="form-element">
+                                    <h6 class="group-label">İpotekanın növü</h6>
+                                    <select class="form-control">
+                                        <option value="7">Standart</option>
+                                        <option value="4">Güzəştli</option>
+                                    </select>
+                                </div>
+                                <div class="form-element">
+                                    <h6 class="group-label">Faiz dərəcəsi</h6>
+                                    <p id="Percent" class="value">7</p>
+                                    <input type="range" id="PercentSlider"  value="7">
+                                </div>
+                            </div>
+                            <div class="result-container">
+                                <h5 class="calc-title">Nəticə</h5>
+                                <div class="results mb-5">
+                                    <div class="result">
+                                        <p id="Monthly">44.58 AZN</p>
+                                        <p>Aylıq ödəniş</p>
+                                    </div>
+                                    <div class="result">
+                                        <p id="Total">5350 AZN</p>
+                                        <p>Ümumi məbləğ</p>
+                                    </div>
+                                </div>
+                                <a href="#LoansCurrency" class="my-btn yellow-btn">SİFARİŞ ETMƏK</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="currency d-none">
                     <div class="buttons">
                         <p class="cash-btn active">Nağd</p>
                         <p class="cashless-btn">Nağdsız</p>
@@ -211,7 +322,7 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="grey-btn">VALYUTA KALKULYATORUNDA HESABLAYIN +</div>
+                    <div class="my-btn grey-btn">VALYUTA KALKULYATORUNDA HESABLAYIN +</div>
                     <p class="exchange-alert">* Regionlarda yerləşən filiallarda valyuta məzənnəsi fərqli ola bilər.  Təcili pul köçürmələri sistemi üzrə filiallarda valyuta məzənnələri fərqli ola bilər.</p>
                 </div>
             </div>
@@ -232,10 +343,9 @@
             </div>
         </div>
     </main>
-
     <footer>
         <div class="container-n">
-            <ul class="d-flex justify-content-center social-icons">
+            <ul class="social-icons d-flex justify-content-center">
                 <li><a href="https://www.youtube.com/expressbankasc" target="_blank">
                     <img src="https://adminpanel.expressbank.az//images/social_icons/youtube.svg">
                 </a></li>
@@ -250,7 +360,7 @@
                 </a></li>
             </ul>
             <ul class="contact">
-                <li><a href="about.html">
+                <li><a href="#">
                     <img width="18px" src="https://adminpanel.expressbank.az/images/menus/about.png">
                     <span> Haqqımızda</span>
                 </a></li>
@@ -258,7 +368,7 @@
                     <img width="13.78px" src="https://adminpanel.expressbank.az/images/menus/expressbank_148_1624424642.svg">
                     <span> Expressbank online</span>
                 </a></li>
-                <li><a href="#" class="">
+                <li><a href="#">
                     <img width="14.72px" src="https://adminpanel.expressbank.az/images/menus/marker.svg">
                     <span> Ünvanlarımız</span>
                 </a></li>
@@ -290,7 +400,6 @@
             <p class="copyright text-center">© Expressbank ASC 2021</p>
         </div>
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" type="text/javascript"></script>
     <script src="assets/js/app.js"></script>
