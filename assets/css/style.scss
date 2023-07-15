@@ -1,26 +1,8 @@
-* {
-    font-family: Proxima Nova;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-@font-face {
-    font-family: Proxima Nova;
-    src: url('../fonts/ProximaNova-Regular.woff2');
-}
 $darktext: #231f20;
 $greytext: #5f6369;
 $greyborder: 1px solid #d7d8d6;
 $normal: 0.06em;
 $double: 0.12em;
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-    a { text-decoration: none; }
-    li { list-style: none; }
-    h1, h2, h3, h4,h5, h6 { font-weight: normal; }
-    .container-n { padding: 0 10px; }
-}
 header {
     z-index: 10;
     background-color: #ffffff;
@@ -41,6 +23,7 @@ header {
         }
     }
     .top-header {
+        height: 63.4px;
         padding: 10px 0;
         .left {
             .side-menu-btn {
@@ -57,17 +40,77 @@ header {
         }
         .right {
             .icons {
-                img { margin-right: 6px; }
-                img:last-child {
-                    margin-right: 8px;
-                    width: 22px;
+                img:first-child { margin: 2px 6px 0 0; }
+                ul {
+                    display: flex;
+                    align-items: center;
+                    margin: 0;
+                    li {
+                        padding: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        &:first-child {
+                            position: relative;
+                            margin: 2px 15px 0 0;
+                            i {
+                                color: #faa61a;
+                                font-size: 18px;
+                            }
+                            small {
+                                position: absolute;
+                                right: -12px;
+                                top: -10px;
+                                background-color: $darktext;
+                                color: #ffffff;
+                                font-size: 12px;
+                                width: 18px;
+                                text-align: center;
+                                border-radius: 50%;
+                            }
+                        }
+                        a img { width: 22px; }
+                    }
                 }
             }
             span {
+                color: $darktext;
                 font-size: 12px;
                 letter-spacing: $double;
-                border-left: 1px solid #ededed;
-                padding: 7px 0 7px 10px;
+                &.lang {
+                    border-left: 1px solid #ededed;
+                    padding: 7px 0 7px 10px;
+                }
+                &.dropdown-item {
+                    display: block;
+                    width: 100%;
+                    line-height: 16px;
+                    padding: 4px 24px 12px;
+                    &.selected { color: #a9abac; }
+                }
+            }
+            .my-dropdown-menu {
+                position: absolute;
+                top: 45px;
+                right: -7px;
+                z-index: 5;
+                display: none;
+                width: 68.6px;
+                background-color: #ffffff;
+                padding: 8px 0;
+                border: 1px solid #00000016;
+                border-radius: 8px;
+                margin: 2px 0 0;
+                .fa-angle-up {
+                    position: absolute;
+                    transform: translateX(-50%);
+                    left: 50%;
+                    top: -14px;
+                    background-color: #ffffff;
+                    color: #eeeeee;
+                    width: 15px;
+                    font-size: 20px;
+                }
             }
         }
     }
@@ -127,7 +170,6 @@ header {
             height: 100%;
         }
     }
-    
 }
 .side-menu {
     ul {
@@ -145,6 +187,7 @@ header {
                     background-color: #f5f5f5;
                     font-size: 12px;
                     font-weight: 600;
+                    letter-spacing: $double;
                 }
             }
             ul li a {
@@ -189,10 +232,47 @@ header {
             margin: 14px 20px;
         }    
 }
+.shadow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    display: none;
+    background-color: #000000;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+}
+.search-input {
+    position: fixed;
+    left: 10px;
+    top: 5px;
+    z-index: 11;
+    display: none;
+    background-color: #ffffff;
+    width: calc(100% - 20px);
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.03em;
+    padding: 8px 10px;
+    border: $greyborder;
+    border-radius: 4px;
+}
+.search-btn {
+    position: fixed;
+    right: 10px;
+    top: 5px;
+    z-index: 11;
+    display: none;
+    background-color: #f9c20a;
+    padding: 7.5px 10px;
+    border-radius: 4px;
+    img { width: 24px }
+}
 #Whelp {
     right: 24px;
     bottom: 24px;
-    z-index: 1;
+    z-index: 11;
     background-color: #ffa300;
     padding: 8px;
     border-radius: 50%;
@@ -656,7 +736,7 @@ main {
             h3 { padding: 0 0 10px; }
         }
     }
-    #Loans, #Cards {
+    #Loans, #Cards, .cards {
         background-color: #f5f5f5;
         .card-container {
             margin: 48px 0 0;
@@ -695,12 +775,14 @@ main {
                     .list-container {
                         position: relative;
                         ul {
+                            display: flex;
+                            overflow-x: scroll;
                             padding: 0 0 15px;
                             margin: 0;
                             &::before{
                                 content: "";
                                 position: absolute;
-                                right: 0;
+                                right: -1px;
                                 top: 0;
                                 width: 35px;
                                 height: 100%;
@@ -816,4 +898,93 @@ main {
             }
         }
     }
+    #Cart .cards .card-container {
+        padding: 24px 0 0;
+        margin: 0;
+        &:last-child { padding-bottom: 24px; }
+        .card-box {
+            position: relative;
+            display: flex;
+            height: 150px;
+            img {
+                position: absolute;
+                transform: translateY(-50%);
+                left: 4px;
+                top: 50%;
+                height: 100px;
+            }
+            .card-content {
+                position: absolute;
+                left: 72px;
+                width: 220px;
+                color: $darktext;
+                h4 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin: 20px 10px 10px;
+                }
+                .list-container {
+                    li {
+                        padding-right: 4px;
+                        margin-right: 4px;
+                        h5 {
+                            font-size: 12px;
+                            margin: 0 0 5px;
+                        }
+                        p { font-size: 10px; }
+                    }
+                }
+            }
+            .cart-content {
+                position: absolute;
+                right: 16px;
+                top: 40px;
+                width: 70px;
+                .product-count {
+                    display: flex;
+                    input {
+                        width: 56px;
+                        height: 20px;
+                        text-align: right;
+                        padding-right: 5px;
+                        border-radius: 4px;
+                        margin-right: 5px;
+                        &:focus {
+                            border: none;
+                            outline: 2px solid #faa61a;
+                        }
+                    }
+                    .icons {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        font-size: 8px;
+                    }
+                }
+                .price {
+                    font-size: 14px;
+                    white-space: nowrap;
+                    margin: 8px 0 0;
+                }
+                .delete-btn {
+                    display: block;
+                    background-color: #ff0000;
+                    color: #ffffff;
+                    font-size: 12px;
+                    text-align: center;
+                    padding: 4px 0;
+                    border-radius: 4px;
+                    margin: 12px 0 0;
+                }
+            }
+        }
+    }
+}
+.my-alert {
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+    z-index: 3;
+    opacity: 0;
+    transition: 1s;
 }

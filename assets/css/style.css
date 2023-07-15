@@ -1,31 +1,3 @@
-* {
-  font-family: Proxima Nova;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-@font-face {
-  font-family: Proxima Nova;
-  src: url("../fonts/ProximaNova-Regular.woff2");
-}
-html, body {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-html a, body a {
-  text-decoration: none;
-}
-html li, body li {
-  list-style: none;
-}
-html h1, html h2, html h3, html h4, html h5, html h6, body h1, body h2, body h3, body h4, body h5, body h6 {
-  font-weight: normal;
-}
-html .container-n, body .container-n {
-  padding: 0 10px;
-}
-
 header {
   z-index: 10;
   background-color: #ffffff;
@@ -51,6 +23,7 @@ header .top-header::after, header .nav-1::after, header .nav-2::after {
   background-color: #f5f5f5;
 }
 header .top-header {
+  height: 63.4px;
   padding: 10px 0;
 }
 header .top-header .left .side-menu-btn {
@@ -66,18 +39,82 @@ header .top-header .left .logo {
 header .top-header .left .logo img {
   width: 100%;
 }
-header .top-header .right .icons img {
-  margin-right: 6px;
+header .top-header .right .icons img:first-child {
+  margin: 2px 6px 0 0;
 }
-header .top-header .right .icons img:last-child {
-  margin-right: 8px;
+header .top-header .right .icons ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+header .top-header .right .icons ul li {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .top-header .right .icons ul li:first-child {
+  position: relative;
+  margin: 2px 15px 0 0;
+}
+header .top-header .right .icons ul li:first-child i {
+  color: #faa61a;
+  font-size: 18px;
+}
+header .top-header .right .icons ul li:first-child small {
+  position: absolute;
+  right: -12px;
+  top: -10px;
+  background-color: #231f20;
+  color: #ffffff;
+  font-size: 12px;
+  width: 18px;
+  text-align: center;
+  border-radius: 50%;
+}
+header .top-header .right .icons ul li a img {
   width: 22px;
 }
 header .top-header .right span {
+  color: #231f20;
   font-size: 12px;
   letter-spacing: 0.12em;
+}
+header .top-header .right span.lang {
   border-left: 1px solid #ededed;
   padding: 7px 0 7px 10px;
+}
+header .top-header .right span.dropdown-item {
+  display: block;
+  width: 100%;
+  line-height: 16px;
+  padding: 4px 24px 12px;
+}
+header .top-header .right span.dropdown-item.selected {
+  color: #a9abac;
+}
+header .top-header .right .my-dropdown-menu {
+  position: absolute;
+  top: 45px;
+  right: -7px;
+  z-index: 5;
+  display: none;
+  width: 68.6px;
+  background-color: #ffffff;
+  padding: 8px 0;
+  border: 1px solid rgba(0, 0, 0, 0.0862745098);
+  border-radius: 8px;
+  margin: 2px 0 0;
+}
+header .top-header .right .my-dropdown-menu .fa-angle-up {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: -14px;
+  background-color: #ffffff;
+  color: #eeeeee;
+  width: 15px;
+  font-size: 20px;
 }
 header .nav-1 {
   font-size: 12px;
@@ -159,6 +196,7 @@ header .nav-2::before {
   background-color: #f5f5f5;
   font-size: 12px;
   font-weight: 600;
+  letter-spacing: 0.12em;
 }
 .side-menu ul li ul li a {
   font-size: 18px;
@@ -202,10 +240,52 @@ header .nav-2::before {
   margin: 14px 20px;
 }
 
+.shadow {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  display: none;
+  background-color: #000000;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+}
+
+.search-input {
+  position: fixed;
+  left: 10px;
+  top: 5px;
+  z-index: 11;
+  display: none;
+  background-color: #ffffff;
+  width: calc(100% - 20px);
+  font-size: 20px;
+  line-height: 20px;
+  letter-spacing: 0.03em;
+  padding: 8px 10px;
+  border: 1px solid #d7d8d6;
+  border-radius: 4px;
+}
+
+.search-btn {
+  position: fixed;
+  right: 10px;
+  top: 5px;
+  z-index: 11;
+  display: none;
+  background-color: #f9c20a;
+  padding: 7.5px 10px;
+  border-radius: 4px;
+}
+.search-btn img {
+  width: 24px;
+}
+
 #Whelp {
   right: 24px;
   bottom: 24px;
-  z-index: 1;
+  z-index: 11;
   background-color: #ffa300;
   padding: 8px;
   border-radius: 50%;
@@ -682,65 +762,67 @@ main .page-title .subtitle ul.breadcrumb li {
 main .page-title .subtitle h3 {
   padding: 0 0 10px;
 }
-main #Loans, main #Cards {
+main #Loans, main #Cards, main .cards {
   background-color: #f5f5f5;
 }
-main #Loans .card-container, main #Cards .card-container {
+main #Loans .card-container, main #Cards .card-container, main .cards .card-container {
   margin: 48px 0 0;
 }
-main #Loans .card-container:last-child, main #Cards .card-container:last-child {
+main #Loans .card-container:last-child, main #Cards .card-container:last-child, main .cards .card-container:last-child {
   padding-bottom: 48px;
 }
-main #Loans .card-container .card-box, main #Cards .card-container .card-box {
+main #Loans .card-container .card-box, main #Cards .card-container .card-box, main .cards .card-container .card-box {
   background-color: #ffffff;
   height: 100%;
   padding-bottom: 24px;
   border-radius: 8px;
 }
-main #Loans .card-container .card-box .card-image, main #Cards .card-container .card-box .card-image {
+main #Loans .card-container .card-box .card-image, main #Cards .card-container .card-box .card-image, main .cards .card-container .card-box .card-image {
   position: relative;
   min-height: 230px;
 }
-main #Loans .card-container .card-box .card-image img, main #Cards .card-container .card-box .card-image img {
+main #Loans .card-container .card-box .card-image img, main #Cards .card-container .card-box .card-image img, main .cards .card-container .card-box .card-image img {
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
   top: -20px;
   height: 250px;
 }
-main #Loans .card-container .card-box .card-content, main #Cards .card-container .card-box .card-content {
+main #Loans .card-container .card-box .card-content, main #Cards .card-container .card-box .card-content, main .cards .card-container .card-box .card-content {
   padding: 0 24px;
   color: #231f20;
 }
-main #Loans .card-container .card-box .card-content h4, main #Cards .card-container .card-box .card-content h4 {
+main #Loans .card-container .card-box .card-content h4, main #Cards .card-container .card-box .card-content h4, main .cards .card-container .card-box .card-content h4 {
   font-size: 24px;
   font-weight: 600;
   margin: 20px 0 10px;
 }
-main #Loans .card-container .card-box .card-content p, main #Cards .card-container .card-box .card-content p {
+main #Loans .card-container .card-box .card-content p, main #Cards .card-container .card-box .card-content p, main .cards .card-container .card-box .card-content p {
   color: #5f6369;
   font-size: 14px;
   line-height: 140%;
   letter-spacing: 0.06em;
   margin: 0 0 22px;
 }
-main #Loans .card-container .card-box .card-content .list-container, main #Cards .card-container .card-box .card-content .list-container {
+main #Loans .card-container .card-box .card-content .list-container, main #Cards .card-container .card-box .card-content .list-container, main .cards .card-container .card-box .card-content .list-container {
   position: relative;
 }
-main #Loans .card-container .card-box .card-content .list-container ul, main #Cards .card-container .card-box .card-content .list-container ul {
+main #Loans .card-container .card-box .card-content .list-container ul, main #Cards .card-container .card-box .card-content .list-container ul, main .cards .card-container .card-box .card-content .list-container ul {
+  display: flex;
+  overflow-x: scroll;
   padding: 0 0 15px;
   margin: 0;
 }
-main #Loans .card-container .card-box .card-content .list-container ul::before, main #Cards .card-container .card-box .card-content .list-container ul::before {
+main #Loans .card-container .card-box .card-content .list-container ul::before, main #Cards .card-container .card-box .card-content .list-container ul::before, main .cards .card-container .card-box .card-content .list-container ul::before {
   content: "";
   position: absolute;
-  right: 0;
+  right: -1px;
   top: 0;
   width: 35px;
   height: 100%;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.381390056) 0%, rgba(255, 255, 255, 0.8519782913) 49%, #ffffff 100%);
 }
-main #Loans .card-container .card-box .card-content .list-container ul li, main #Cards .card-container .card-box .card-content .list-container ul li {
+main #Loans .card-container .card-box .card-content .list-container ul li, main #Cards .card-container .card-box .card-content .list-container ul li, main .cards .card-container .card-box .card-content .list-container ul li {
   min-width: 110px;
   max-width: 110px;
   text-align: center;
@@ -748,22 +830,22 @@ main #Loans .card-container .card-box .card-content .list-container ul li, main 
   border-right: 1px solid #d7d8d6;
   margin: 0 8px 0 0;
 }
-main #Loans .card-container .card-box .card-content .list-container ul li:last-child, main #Cards .card-container .card-box .card-content .list-container ul li:last-child {
+main #Loans .card-container .card-box .card-content .list-container ul li:last-child, main #Cards .card-container .card-box .card-content .list-container ul li:last-child, main .cards .card-container .card-box .card-content .list-container ul li:last-child {
   padding: 0;
   border: none;
   margin: 0;
 }
-main #Loans .card-container .card-box .card-content .list-container ul li h5, main #Cards .card-container .card-box .card-content .list-container ul li h5 {
+main #Loans .card-container .card-box .card-content .list-container ul li h5, main #Cards .card-container .card-box .card-content .list-container ul li h5, main .cards .card-container .card-box .card-content .list-container ul li h5 {
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 10px;
 }
-main #Loans .card-container .card-box .card-content .list-container ul li p, main #Cards .card-container .card-box .card-content .list-container ul li p {
+main #Loans .card-container .card-box .card-content .list-container ul li p, main #Cards .card-container .card-box .card-content .list-container ul li p, main .cards .card-container .card-box .card-content .list-container ul li p {
   font-size: 13px;
   letter-spacing: 0.06em;
   margin: 0;
 }
-main #Loans .card-container .card-box .card-content a, main #Cards .card-container .card-box .card-content a {
+main #Loans .card-container .card-box .card-content a, main #Cards .card-container .card-box .card-content a, main .cards .card-container .card-box .card-content a {
   line-height: 16px;
   letter-spacing: 0.12em;
   margin-bottom: 5px;
@@ -847,4 +929,96 @@ main #Information .card-container .box .box-content h4 {
 main #Information .card-container .box .box-content a {
   display: inline-block;
   line-height: 16px;
+}
+main #Cart .cards .card-container {
+  padding: 24px 0 0;
+  margin: 0;
+}
+main #Cart .cards .card-container:last-child {
+  padding-bottom: 24px;
+}
+main #Cart .cards .card-container .card-box {
+  position: relative;
+  display: flex;
+  height: 150px;
+}
+main #Cart .cards .card-container .card-box img {
+  position: absolute;
+  transform: translateY(-50%);
+  left: 4px;
+  top: 50%;
+  height: 100px;
+}
+main #Cart .cards .card-container .card-box .card-content {
+  position: absolute;
+  left: 72px;
+  width: 220px;
+  color: #231f20;
+}
+main #Cart .cards .card-container .card-box .card-content h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 20px 10px 10px;
+}
+main #Cart .cards .card-container .card-box .card-content .list-container li {
+  padding-right: 4px;
+  margin-right: 4px;
+}
+main #Cart .cards .card-container .card-box .card-content .list-container li h5 {
+  font-size: 12px;
+  margin: 0 0 5px;
+}
+main #Cart .cards .card-container .card-box .card-content .list-container li p {
+  font-size: 10px;
+}
+main #Cart .cards .card-container .card-box .cart-content {
+  position: absolute;
+  right: 16px;
+  top: 40px;
+  width: 70px;
+}
+main #Cart .cards .card-container .card-box .cart-content .product-count {
+  display: flex;
+}
+main #Cart .cards .card-container .card-box .cart-content .product-count input {
+  width: 56px;
+  height: 20px;
+  text-align: right;
+  padding-right: 5px;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+main #Cart .cards .card-container .card-box .cart-content .product-count input:focus {
+  border: none;
+  outline: 2px solid #faa61a;
+}
+main #Cart .cards .card-container .card-box .cart-content .product-count .icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 8px;
+}
+main #Cart .cards .card-container .card-box .cart-content .price {
+  font-size: 14px;
+  white-space: nowrap;
+  margin: 8px 0 0;
+}
+main #Cart .cards .card-container .card-box .cart-content .delete-btn {
+  display: block;
+  background-color: #ff0000;
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+  padding: 4px 0;
+  border-radius: 4px;
+  margin: 12px 0 0;
+}
+
+.my-alert {
+  position: fixed;
+  left: 15px;
+  bottom: 15px;
+  z-index: 3;
+  opacity: 0;
+  transition: 1s;
 }/*# sourceMappingURL=style.css.map */
