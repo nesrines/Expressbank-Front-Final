@@ -104,6 +104,7 @@ $(() => {
         localStorage.setItem('cart', JSON.stringify([]));
         alert.className = 'my-alert alert alert-success opacity-100';
         alert.innerHTML = 'Sifarişiniz təsdiqləndi!';
+        document.querySelector('#Count small').innerHTML = JSON.parse(localStorage.getItem('cart')).length;
         Check();
         setTimeout(() => {
             alert.classList.remove('opacity-100');

@@ -1,10 +1,160 @@
-header {
+body {
+  background-color: #f6f6f6;
+}
+body header {
   padding: 30px 0;
 }
-header h1 {
+body header h1 {
   color: #000000;
   font-size: 20px;
   line-height: 1;
   font-weight: 700;
   margin: 0;
+}
+body .my-nav {
+  border-bottom: 1px solid #e4e4e8;
+  margin: 0;
+}
+body .my-nav h2 {
+  color: #a4a4a4;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 15px;
+  padding: 10px 0;
+  border: 1px solid transparent;
+  margin: 0 20px 0 0;
+}
+body .my-nav h2.active {
+  color: #ffc533;
+  box-shadow: 0 1px 0 0 #ffc533;
+}
+body .search-branch {
+  margin-top: 20px;
+}
+body .search-branch .search-box {
+  position: relative;
+}
+body .search-branch .search-box svg {
+  position: absolute;
+  transform: translateY(-50%);
+  left: 2px;
+  top: 50%;
+  color: #5f6369;
+  height: 16px;
+}
+body .search-branch .search-box input {
+  background-color: #ffffff;
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 1px 2px 1px 35px;
+  border: 1px solid #e4e4e8;
+  outline: none;
+  border-radius: 5px;
+}
+body .search-branch .map-switch, body .search-branch .map-switch button {
+  display: flex;
+  align-items: center;
+}
+body .search-branch .map-switch {
+  justify-content: flex-start;
+  height: 40px;
+  font-size: 14px;
+  border: 1px solid #e4e4e8;
+  border-radius: 5px;
+  margin: 12px 0 0;
+}
+body .search-branch .map-switch button {
+  justify-content: center;
+  background-color: #ffffff;
+  color: #000000;
+  width: 50%;
+  height: 100%;
+  border: none;
+}
+body .search-branch .map-switch button:first-child {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+body .search-branch .map-switch button:last-child {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+body .search-branch .map-switch button.active {
+  background-color: #5f6369;
+  color: #ffffff;
+}
+body .list-branches {
+  margin: 20px 0;
+}
+body .list-branches .my-card {
+  background-color: #ffffff;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 2.7px 0.3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+body .list-branches .my-card h3 {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 100%;
+  padding: 20px 25px;
+  margin: 0;
+}
+body .list-branches .my-card .map {
+  position: relative;
+  height: 160px;
+  border-top: 1px solid #e4e4e8;
+  border-bottom: 1px solid #e4e4e8;
+}
+body .list-branches .my-card .map img {
+  width: 100%;
+  height: 160px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body .list-branches .my-card .map .show {
+  position: absolute;
+  right: 7px;
+  bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: -1px 2px 2.76px 0.24px rgba(0, 0, 0, 0.25);
+}
+body .list-branches .my-card .map .show svg {
+  width: 18px;
+  margin: 0 5px 0 0;
+}
+body .list-branches .my-card p {
+  color: #5f6369;
+  font-size: 14px;
+  line-height: 150%;
+  padding: 20px 0;
+  margin: 0 25px;
+}
+body .list-branches .my-card p.address {
+  border-bottom: 1px solid #e4e4e8;
+}
+body .list-branches .my-card .yellow-btn {
+  padding: 10px;
+}
+body .list-branches .my-card .yellow-btn button {
+  background-color: #ffc533;
+  color: #000000;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 29px;
+  text-align: center;
+  padding: 10.5px 20px;
+  border: none;
+  border-radius: 5px;
 }/*# sourceMappingURL=oq.css.map */
